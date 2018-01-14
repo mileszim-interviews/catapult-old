@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Fetch current ruby version
+ruby File.read('.ruby-version').chomp
+
+# Allow github shorthand
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -17,12 +21,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks', '~> 5'
 
+# API
+gem 'jsonapi-resources', '~> 0.9.0'
 
+# Test
 group :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
 
+# Dev
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -31,6 +39,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# For heroku deploys
-ruby '2.4.2'
