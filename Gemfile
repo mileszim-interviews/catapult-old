@@ -14,6 +14,7 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'redis', '~> 3.0'
+gem 'seedbank', '~> 0.4.0'
 
 # Assets
 gem 'sass-rails', '~> 5.0'
@@ -28,6 +29,7 @@ gem 'jsonapi-resources', '~> 0.9.0'
 group :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry'
 end
 
 # Dev
@@ -35,6 +37,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'annotate', '>= 2.7.2'
+  gem 'pry'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
